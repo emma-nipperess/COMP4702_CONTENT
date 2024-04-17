@@ -30,4 +30,4 @@ function closePopup() {
 }
 
 // Set interval to show the popup every 10 minutes
-//setInterval(showPopup, 600000);
+setInterval(showPopup, 600000);
