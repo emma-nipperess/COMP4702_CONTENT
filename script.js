@@ -10,7 +10,11 @@ function highlightSection() {
     sections.forEach((section, index) => {
         const rect = section.getBoundingClientRect();
         if (rect.top <= 150 && rect.bottom >= 150) {
-            navLinks.forEach(link => { link.style.color = 'white'; });
+            navLinks.forEach(link => { 
+                link.style.color = 'white';
+                link.style.textShadow = " -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000";
+            });
+            navLinks[index].style.textShadow = " -1px -1px 0 #FFF, 1px -1px 0 #FFF, -1px 1px 0 #FFF, 1px 1px 0 #FFF";
             navLinks[index].style.color = 'purple';
         }
     });
