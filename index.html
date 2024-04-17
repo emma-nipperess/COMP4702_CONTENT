@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMP4702</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="sideNav" class="sidenav">
+        <a href="#module4">ML Performance</a>
+        <a href="#module5">Parametric Models</a>
+        <a href="#module6">Neural Networks</a>
+        <a href="#module7">Ensemble Methods</a>
+        <a href="#module8">Non-linear Input Transformations and Kernels</a>
+    </div>
+    <div id="minecraftPopup" class="minecraft-popup">
+        <span class="close-btn" onclick="closePopup()">&times;</span>
+        <h3 id="crazy">CONGRATS! YOU JUST DID ANOTHER 10 MINUTES ON THIS PAGE</h3>
+        <img src="media/steve.gif" id="bouncingGif" alt="Celebratory Gif">
+    </div>
+    
+    <div class="main">
+        <div id="module4" class="content">
+            <h3>Module 4 - ML Performance</h3>
+            
+            <h4><strong>Performance Metrics in Machine Learning:</strong></h4>
+            <ul>
+                <li><strong>Error Functions:</strong> These are used to assess how well your machine learning model predicts new data. The goal is to make this error as small as possible. For example, in predicting continuous values (regression), we often use the squared error between the predicted values and the actual values. In predicting categories (classification), we might use the error rate, which is essentially how often the model is wrong.
+                </li>
+            </ul>
+        
+            <h4><strong>Expectation of New Data Error:</strong></h4>
+            <ul>
+                <li>Machine learning models are essentially trying to predict new, unseen data accurately. We consider the data to follow some unknown, unchanging pattern, and we want our model to generalize well to new data from this distribution. This concept is referred to as minimizing the "expected new data error."
+                </li>
+            </ul>
+        
+            <h4><strong>Training vs. Generalization:</strong></h4>
+            <ul>
+                <li><strong>Training Error:</strong> The error measured on the data used to create the model. It's usually lower because the model is specifically tuned to this data.
+                </li>
+                <li><strong>Generalization Error:</strong> The error when the model is used on new, unseen data. It's typically higher and more indicative of how well the model will perform in real-world scenarios.
+                </li>
+                <li>A model performing well on training data but poorly on new data is likely overfitting, meaning it's too complex and tuned specifically to the training data at the expense of its ability to generalize.
+                </li>
+            </ul>
+        
+            <h4><strong>Estimating Generalization Error:</strong></h4>
+            <ul>
+                <li>Since we can't see all possible future data, we estimate this error using techniques like splitting our data into training and validation sets or using cross-validation. In cross-validation, we rotate which parts of the data are used for training and which for validation, averaging the results to get a better estimate of how well the model might perform on new data.
+                </li>
+            </ul>
+        
+            <h4><strong>Model Complexity and the Generalization Gap:</strong></h4>
+            <ul>
+                <li><strong>Generalization Gap:</strong> This is the difference between the training error and the generalization error. A high gap indicates possible overfitting.
+                </li>
+                <li>The complexity of the model often affects this gap. Simplistic models may underfit (not capture enough of the data's pattern), while overly complex models may overfit.
+                </li>
+            </ul>
+        
+            <h4><strong>Bias-Variance Tradeoff:</strong></h4>
+            <ul>
+                <li><strong>Bias:</strong> Errors that result from simplistic assumptions in the model. High bias can cause underfitting.
+                </li>
+                <li><strong>Variance:</strong> Errors that result from the model being too sensitive to small fluctuations in the training data. High variance can cause overfitting.
+                </li>
+                <li>Good model training involves balancing bias and variance to minimize total error.
+                </li>
+            </ul>
+        
+            <h4><strong>Additional Tools for Binary Classification:</strong></h4>
+            <ul>
+                <li>For models that predict one of two categories (binary classification), we use tools like confusion matrices and ROC curves to understand performance in more detail. These tools help us see how changing the threshold for deciding between categories affects performance and allows us to adjust the model to better handle real-world, uneven data distributions.
+                </li>
+            </ul>
+        </div>        
+            
+        <div id="module5" class="content">
+            <h3>Module 5 - Learning Parametric Models</h3>
+            <p>Machine learning often involves learning from data by solving optimization problems. This module focuses on parametric models, which are models with a set number of parameters.</p>
+            
+            <h4>Principles of Parametric Modelling</h4>
+            <p>In parametric modeling, we try to predict outputs from inputs using a function with specific parameters. This function could be simple (like in linear regression) or more complex. However, training these models means finding the best parameters that fit the data, while being cautious of not overfitting (making our model too narrow to fit only our training data).</p>
+        
+            <h4>Loss Functions and Likelihood-Based Models</h4>
+            <p>Choosing the right loss function is crucial as it directs the training of the model. Different loss functions are suitable for different types of problems, like regression or classification. For example, squared error works well with Gaussian noise assumptions in regression, while cross-entropy loss is effective for classification when working with probabilistic outcomes.</p>
+        
+            <h4>Regularisation</h4>
+            <p>Regularisation helps control model complexity, preventing models from becoming overly complex and overfitting. It can be explicit, like adding a penalty for larger parameter values, or implicit, like stopping training early to prevent overfitting.</p>
+        
+            <h4>Parameter Optimisation</h4>
+            <p>Optimization is central in ML for finding parameters that minimize the loss function. Methods like gradient descent adjust parameters incrementally to improve predictions. Advanced techniques, such as stochastic gradient descent, update parameters using mini-batches of data, which can be more efficient and effective.</p>
+        
+            <h4>Optimisation with Large Datasets</h4>
+            <p>When working with large datasets, techniques like stochastic gradient descent are used, which involve calculating gradients from subsets of data. This not only speeds up the training but can also lead to better generalization by introducing randomness in the training process.</p>
+        
+            <h4>Hyperparameter Optimisation</h4>
+            <p>Hyperparameters, unlike model parameters, are not learned from the data directly but are set before training and affect the learning process. Optimizing these requires methods like grid search or more sophisticated approaches like those used in automated machine learning (AutoML).</p>
+        </div>
+
+        <div id="module6" class="content">
+            <h3>Module 6 - Neural Networks and Deep Learning</h3>
+            <h4>Metaphor: Explaining Neural Networks Like a Team Sport</h4>
+            <p>Imagine you're the coach of a soccer team, and each player is like a neuron. Every player (neuron) receives a ball (input data) from various sources and decides how hard to kick the ball (output) based on their training and position (weights and activation function). Some players are forwards (output neurons), and some are midfielders (hidden neurons). The coach (training algorithm) teaches them where to be and how to react during the game (data processing).</p>
+            <p>Just like in a game, sometimes you need to pass the ball quickly to another player (layer) who is in a better position to score. The whole team must work together smoothly, passing the ball (data) from one player to another to achieve the goal (correct output). If a player kicks too hard or not hard enough (overfitting or underfitting), it might mess up the play, so the coach trains them to get it just right.</p>
+            <p>Also, sometimes the coach might make some players sit out (dropout) to make sure the remaining players can handle the game on their own, making the whole team stronger and more flexible.</p>
+
+            <h4>The Neural Network Model</h4>
+            <p>Neural networks are inspired by biological brains. An "artificial neuron" is a basic unit in a neural network that mimics a biological neuron. It takes multiple inputs, each input is multiplied by a weight (importance), and then all these weighted inputs are summed up. This sum can be modified by a function called an activation function to produce an output. Activation functions like logistic sigmoid or ReLU determine if the neuron will 'activate' similar to how neurons in the brain fire.</p>
+            <p>Neural networks are built by connecting layers of these neurons. The simplest form, a single-layer network, might just have neurons connected directly to inputs. More complex networks, called multi-layer perceptrons or deep neural networks, have multiple layers where each layer's output serves as the next layer's input.</p>
+        
+            <h4>Vectorization</h4>
+            <p>When handling many operations across the data points or neurons simultaneously, we use matrices and vectors. This makes the computations efficient and is one reason why GPUs (graphics processing units) are popular for training neural networks—they handle matrix operations very well.</p>
+        
+            <h4>Neural Networks for Classification</h4>
+            <p>For tasks like classifying data into categories, neural networks use similar setups as earlier seen in regression but apply different activation functions to output probabilities, like softmax for multiple categories.</p>
+        
+            <h4>Training a Neural Network</h4>
+            <p>Training a neural network involves adjusting its weights based on the errors it makes. We use a method called backpropagation, which uses calculus to update weights in the opposite direction of the error gradient. This process iteratively reduces the error made by the network on training data.</p>
+        
+            <h4>Convolutional Neural Networks (CNNs)</h4>
+            <p>CNNs are a special type of neural network used primarily for image data. They recognize that pixels close to each other are more related than pixels far apart. CNNs use filters to capture spatial hierarchies in data by applying convolutions across the input making them efficient in terms of the number of parameters.</p>
+            <p>Layers like pooling are used to reduce the dimensionality of the data further, helping in making the detection of features in the image invariant to scale and position.</p>
+        
+            <h4>Dropout</h4>
+            <p>Dropout is a technique to prevent overfitting (where the model learns the training data too well, including noise and details not applicable to other data). It involves randomly dropping units in the neural network during training, which forces the network to learn more robust features that are useful in conjunction with many different random subsets of the other neurons.</p>
+        
+            <h4>Deep Learning</h4>
+            <p>Deep learning involves neural networks with many layers. These networks are capable of learning very complex patterns in data, and they have significantly improved the performance of many machine learning tasks, particularly in image and voice recognition.</p>
+            
+        </div>
+
+        <div id="module7" class="content">
+            <h3>Ensemble Methods: Bagging and Boosting</h3>
+            
+            <h4>Overview of Ensemble Methods</h4>
+            <p>Ensemble methods involve creating a team of models, rather than relying on a single model. Each member of the team (called a base model) makes its own predictions and the ensemble method combines these predictions to produce a final output. This collaboration often leads to better performance than any single model could achieve on its own.</p>
+            
+            <h4>Bagging</h4>
+            <p>Bagging, short for "bootstrap aggregating", reduces overfitting, which is like memorizing answers to a specific set of questions without understanding the subject deeply. It does this by creating multiple smaller data sets from the original, by randomly picking samples with replacement (imagine pulling out balls from a bag, noting the number, then putting it back and mixing). Each model then trains on these subsets. The final prediction is made by averaging the outputs (for numerical predictions) or by majority vote (for categories).</p>
+        
+            <h4>Random Forests</h4>
+            <p>Random Forests apply bagging specifically to decision trees. To make each tree a bit different, they randomly select which features (like variables or columns in your data) to consider when making splits. This randomness helps in making the trees less similar and improves the overall performance of the ensemble.</p>
+        
+            <h4>Boosting</h4>
+            <p>Boosting is a bit different from bagging. Instead of making each model in the ensemble independent, boosting builds models sequentially. Each new model focuses on the mistakes of the previous ones, trying to improve the prediction there. It's like each new player in a relay race trying to make up for the time lost by the previous runners.</p>
+        
+            <h4>AdaBoost</h4>
+            <p>AdaBoost starts with all data points being equally important, but as more models are added, data points that are harder to predict correctly become more emphasized. Each model in the sequence adds to the final prediction with a weight that reflects its accuracy, focusing more on correcting its predecessors' mistakes.</p>
+        
+            <h4>Gradient Boosting</h4>
+            <p>Gradient Boosting takes the idea of boosting further by optimizing a loss function directly, which is like minimizing the team's mistakes in predicting the outcome. It builds the model in stages like AdaBoost, but adjusts the approach by focusing directly on reducing errors from the previous stage, more like a coach tweaking the training strategy based on the team's performance in the last game.</p>
+            
+            <h4>Metaphor: Explaining Ensemble Methods Using a Sports Team</h4>
+            <p>Think of ensemble methods like a sports team where each player is a different model. In bagging, the coach (the algorithm) picks players (models) based on their abilities to play well in slightly different conditions (training subsets). In boosting, each player watches the previous one play and tries to cover up their weaknesses in the next game.</p>
+            <p>For Random Forests, imagine a soccer team where the coach randomly picks which players will play in each match to give each player experience in different positions to see where they perform best.</p>
+            <p>In AdaBoost, the coach pays more attention to players who didn't perform well in the last match, giving them more training to improve in the next game. Gradient Boosting is like a coach analyzing exactly where the team keeps losing points and then specifically training players to improve in those exact areas.</p>
+        
+        </div>
+        
+    
+        <div id="module8" class="content">
+            <h3>Non-linear Input Transformations and Kernels</h3>
+            
+            <h4>Creating Features by Non-linear Input Transformations</h4>
+            <p>Before we start training a machine learning model, we can manipulate our input data to help the model understand it better. By using functions that transform the inputs in non-linear ways, such as squaring or cubing values, we can help a linear model learn non-linear relationships. This is like wearing different glasses to see various aspects of the same object more clearly.</p>
+            
+            <h4>Kernel Ridge Regression</h4>
+            <p>Kernels are a clever trick in machine learning to make models more powerful without explicitly transforming every data point with basis functions. A kernel function calculates the relationship between pairs of data points as if they had been transformed, without actually doing so. This is like knowing the distance between two cities without having to drive between them.</p>
+            
+            <h4>Support Vector Regression</h4>
+            <p>This is a type of regression that modifies the loss function (how we measure errors) to ignore errors that are within a certain range. This makes the model focus only on significant errors. It’s akin to a teacher who ignores small mistakes in an essay and only deducts points for major errors.</p>
+            
+            <h4>Kernel Theory</h4>
+            <p>Kernels can also apply to other machine learning models, like k-nearest neighbors. This flexibility allows us to use kernel methods in situations where traditional measurements like Euclidean distance don't work, such as comparing texts. Imagine comparing the similarity of recipes based not only on their ingredients but how the dishes taste.</p>
+            
+            <h4>Support Vector Classification</h4>
+            <p>For classifying data into categories, support vector machines use a concept called 'margin' to build a buffer area around the decision boundary. Data points that fall within this margin or on the wrong side influence how the model is trained. It’s like setting up ropes along the edges of a ski slope, where the flags are placed to ensure skiers stay within safe boundaries.</p>
+            
+            <h4>Metaphor: Kitchen Recipes as Kernels</h4>
+            <p>Think of each recipe as a point in a high-dimensional space where each dimension represents an ingredient. A kernel function is like a taste test that determines how similar two recipes are based on taste rather than comparing every single ingredient. Just as a taste test can give you a quick idea of whether two dishes will have similar flavors, a kernel function quickly assesses similarity in transformed feature space without needing to explicitly list and compare every ingredient.</p>
+        
+        </div>
+            
+        <!--<div id="section4" class="content">Content for Section 4</div>-->
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
