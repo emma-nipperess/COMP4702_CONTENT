@@ -8,6 +8,9 @@
 </head>
 <body>
     <div id="sideNav" class="sidenav">
+        <a href="#module1">Introduction to ML</a>
+        <a href="#module2">Supervised Learning</a>
+        <a href="#module3">Statistical Models</a>
         <a href="#module4">ML Performance</a>
         <a href="#module5">Parametric Models</a>
         <a href="#module6">Neural Networks</a>
@@ -21,6 +24,84 @@
     </div>
     
     <div class="main">
+        <div id="module1" class="content">
+            <h3>Module 1 - Introduction to Machine Learning</h3>
+            
+            <h4>What is Machine Learning?</h4>
+            <p>Machine learning is like teaching a computer to make smart decisions based on past experiences. It involves training a computer using a large set of data (training data) and a mathematical model that improves its accuracy over time. After training, the computer can make predictions or decisions without being explicitly programmed to perform the task.</p>
+            
+            <h4>Key Concepts</h4>
+            <ul>
+                <li><strong>Training Data:</strong> The historical data that the model learns from.</li>
+                <li><strong>Mathematical Model:</strong> A mathematical representation of the real-world process that needs to be learned.</li>
+                <li><strong>Learning Algorithm:</strong> The procedure used to adjust the model based on how well it performs.</li>
+                <li><strong>Parameters:</strong> The aspects of the model that are adjusted by the learning algorithm to improve the model.</li>
+            </ul>
+        
+            <h4>Practical Examples of Machine Learning</h4>
+            <p>Machine learning can be applied in various fields to improve outcomes, from healthcare to materials science. Here are some practical examples:</p>
+            <ul>
+                <li><strong>Healthcare:</strong> Diagnosing heart abnormalities from ECG data to determine heart health.</li>
+                <li><strong>Materials Science:</strong> Predicting formation energy of crystals to discover new materials without costly physical experiments.</li>
+                <li><strong>Sports:</strong> Predicting the probability of a soccer shot resulting in a goal based on the player's position and other factors.</li>
+                <li><strong>Environment:</strong> Estimating air pollution levels across different areas based on historical data.</li>
+                <li><strong>Image Processing:</strong> Classifying each pixel in an image for tasks like medical imaging or autonomous driving.</li>
+            </ul>
+        
+            <h4>Understanding Uncertainty</h4>
+            <p>Machine learning not only makes predictions but also estimates how certain those predictions are. This ability to quantify uncertainty is crucial for making informed decisions based on machine learning outputs.</p>
+        
+            <h4>Metaphor: Machine Learning as a School</h4>
+            <p>Think of machine learning like a school where the computer is a student. The training data is the textbook from which the student learns, the learning algorithm is the teaching method, and the mathematical model is the student's notebook where notes are kept. Just as a student gets better with study, the computer improves its predictions through learning. The ultimate goal is to pass the test (make accurate predictions on new data) not just memorize the textbook.</p>
+        </div>
+        
+        <div id="module2" class="content">
+            <h3>Module 2 - Supervised Learning</h3>
+            
+            <h4>Introduction to Supervised Learning</h4>
+            <p>Supervised learning is like having a teacher guide you through a lesson. You are given examples (the training set) where you know both the questions and the correct answers. Your task is to learn from these examples well enough that you can correctly answer new questions (new data) that you haven't seen before.</p>
+            
+            <h4>Nearest-Neighbour Methods</h4>
+            <p>Imagine you are at a party and you don't know where to sit. A simple strategy might be to find a group of people most similar to you and join them. Nearest-neighbour methods in machine learning do something similar: they classify or predict the outcome for a new data point based on how closely it resembles existing data points. If most of your 'nearest' data points belong to a certain category, the new data point is predicted to belong to that category as well.</p>
+        
+            <h4>Decision Trees</h4>
+            <p>Decision trees are like playing the game of '20 questions'. You ask yes/no questions about the data (features) to narrow down the possibilities until you can make a reasonable guess about the category of the data. Each question splits the possibilities into two branches, which is why it's called a 'tree'. This method is transparent and easy to understand because you can follow the path of decisions made to reach a conclusion.</p>
+        
+            <h4>Understanding Training and Model Performance</h4>
+            <p>When training a model, what's crucial is not just how well it memorizes the training set but how well it can apply what it's learned to new, unseen data. This ability to perform well on new data is called generalization. Just like in school, doing well on homework is good, but the real test is how you perform in an unfamiliar exam.</p>
+        
+            <h4>Metaphor: Supervised Learning as School Learning</h4>
+            <p>Think of supervised learning like your school days. The training set is like the textbook exercises you work on, where you know the questions and the answers. The test set is like the final exam, with questions you haven't seen before. Nearest-neighbour methods are akin to sitting next to the smartest kid during a group assignment, assuming their answers are probably the best guide to what's correct. Decision trees are like breaking down complex problems into simpler, yes/no questions to arrive at an answer, much like solving a mystery in a detective book.</p>
+        
+            <p>In both methods, the goal is to learn the patterns and rules well enough during the 'lessons' so that you can handle the 'exams'—new data—with confidence and accuracy.</p>
+        </div>
+
+        <div id="module3" class="content">
+            <h3>Basic Parametric Models and a Statistical Perspective on Learning</h3>
+            
+            <h4>Introduction to Parametric Models</h4>
+            <p>Parametric models in supervised learning, like linear and logistic regression, are like using predefined recipes in cooking. You have a set of instructions (the model) and a list of ingredients (features) that you adjust to taste (fit the data). The goal is to create a dish (prediction) that tastes good (accurate) most of the time, even with some variation in ingredients.</p>
+            
+            <h4>Linear Regression</h4>
+            <p>Linear regression is like trying to draw a straight line through a set of points on a graph so that the line is as close to all the points as possible. This line represents the trend in the data. We acknowledge that not all points will lie perfectly on the line (this is the uncertainty or noise), but the line should capture the general direction or trend of the data points.</p>
+        
+            <h4>Logistic Regression</h4>
+            <p>Despite its name, logistic regression is used for classification, not regression. It's like linear regression but with a twist: the outcome is categorical (like yes/no). Imagine trying to predict if a team will win or lose based on scores; logistic regression would give us a probability of winning, and we set a rule (like a threshold) to make a final guess.</p>
+        
+            <h4>Understanding the Maximum Likelihood Perspective</h4>
+            <p>Maximum likelihood is a statistical method used to estimate the model parameters. It's like adjusting your recipe to make sure that, on average, it yields the most satisfying meal possible given the ingredients you have. For linear regression, using Gaussian noise, this is equivalent to minimizing the difference (error) between your predictions and the actual outcomes.</p>
+        
+            <h4>Categorical Input Variables</h4>
+            <p>Handling categorical variables, like city names or types of cuisine, often requires transforming them into a format that models can use, such as one-hot encoding. This is similar to assigning a unique barcode to every ingredient in a recipe so that a computer can understand and process it.</p>
+        
+            <h4>Decision Boundaries and Probabilistic Predictions</h4>
+            <p>In logistic regression, the decision boundary is like a line or curve that separates different classes (e.g., wins vs. losses) in your data. This boundary helps the model decide which class a new example belongs to based on which side of the boundary it falls. The model's probabilistic predictions provide a measure of certainty or uncertainty about its guesses.</p>
+        
+            <h4>Metaphor: Using Recipes in Cooking</h4>
+            <p>Think of parametric models as recipes for cooking. Linear regression is like following a recipe for a smoothie where the outcome (the taste) is continuously variable depending on how much of each ingredient you add. Logistic regression, on the other hand, is like a recipe that tells you whether the dish will turn out to be sweet or salty, based on the ingredients and their quantities. The statistical framework built around these models helps in tweaking the recipes based on feedback (data), ensuring the dish turns out right most of the time.</p>
+        </div>
+        
+        
         <div id="module4" class="content">
             <h3>Module 4 - ML Performance</h3>
             
