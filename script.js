@@ -10,8 +10,8 @@ function highlightSection() {
     sections.forEach((section, index) => {
         const rect = section.getBoundingClientRect();
         if (rect.top <= 150 && rect.bottom >= 150) {
-            navLinks.forEach(link => { link.style.color = '#818181'; });
-            navLinks[index].style.color = '#f1f1f1';
+            navLinks.forEach(link => { link.style.color = 'white'; });
+            navLinks[index].style.color = 'purple';
         }
     });
 }
