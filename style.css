@@ -166,3 +166,26 @@ h2, h3, h4 {
 }
 
 
+/*FEELS */
+.hidden { display: none; }
+.feels button {
+    background: linear-gradient(to bottom, #66a6ff 0%, #ccefff 50%, #66a6ff 100%);
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 25px; /* Rounded edges */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.feels button:hover {
+    background-color: rgba(255, 255, 255, 0.8); /* Less transparent when hovered */
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2); /* Deeper shadow when hovered */
+}
+
+.feels {
+    font-family: Barbie, sans-serif;
+    display: flex;
+    justify-content: center;
+}

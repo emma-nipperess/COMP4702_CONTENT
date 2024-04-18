@@ -31,3 +31,21 @@ function closePopup() {
 
 // Set interval to show the popup every 10 minutes
 setInterval(showPopup, 600000);
+
+
+// feels
+function showDiv(id) {
+    // Hide all divs first
+    document.getElementById('smart').style.display = 'none';
+    document.getElementById('stupid').style.display = 'none';
+
+    // Show the selected div
+    document.getElementById(id).style.display = 'block';
+}
+
+function feelingLucky() {
+    // Randomly choose between 'smart' and 'stupid'
+    var choices = ['smart', 'stupid'];
+    var randomChoice = choices[Math.floor(Math.random() * choices.length)];
+    showDiv(randomChoice);
+}
